@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 상대배치 </title>
+<style type="text/css">
+
+div { 
+		text-align:center;	
+		width : 100px;
+		height : 150px;
+		border : 1px lightgray;
+		color : white;
+		background : blue;
+		
+		display : inline-block;
+		}
+		
+		div.up:hover{
+			background: yellow;
+			
+			position:relative;	
+			left:20px;
+			top:20px;
+}
+
+div.down:hover {
+
+		background: orange	;
+		position:relative;	
+		right:20px;
+		bottom:20px;
+}
+
+</style>
+
+</head>
+<body>
+	<h3> 나의 취미 </h3>
+	<hr>
+	<div class='up'>소풍</div>
+	<div class='up'>나들이</div>
+	<div class='down'>책보기</div>
+	<div class='up'>멍때리기</div>
+	<div class='up'>맛집탐방</div>
+</body>
+</html>

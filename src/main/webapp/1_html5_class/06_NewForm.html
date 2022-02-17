@@ -1,0 +1,91 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form>
+
+<fieldset style="width:400px">
+
+	<fieldset>
+	<legend>로그인 정보</legend>
+	<ol>
+		<li>
+		<label for= 'id'>아이디</label>
+		<input type = 'text' id='id' />
+		</li>
+		
+		<li>
+		<label for= 'pass'>비밀번호</label>
+		<input type = 'password' id='pass' />
+		</li>
+		
+		<li>
+		<label for= 'passCheck'>비밀번호 확인</label>
+		<input type = 'password' id='passCheck' />
+		</li>
+		
+		<li>
+		<label for= 'level'>회원 등급</label>
+		<input type = 'text' id='level' 
+		value = '준회원' />
+		</li>
+
+</ol>
+</fieldset>
+
+	<fieldset>
+	<legend>개인 정보</legend>
+	<ol>
+		<li>
+		<label for= 'name'>이름</label>
+		<input type = 'text' id='name'
+		placeholder="5자미만 공백없이" onfocus="this.placeholder=''" onblur="this.placeholder='5자미만 공백없이'" name="search" />
+
+		</li>
+		
+		<li>
+		<label for="email">메일 주소</label>
+		<input type = 'email' id='email' name ='email'
+			placeholder="abcd@domain.com" onfocus="this.placeholder=''" onblur="this.placeholder='abcd@domain.com'" name="search" />
+		</li>
+		
+		<li>
+		<label for= 'tel'>연락처</label>
+		<input type = 'text' id='tel' />
+		</li>
+		
+		<li>
+		<label for="birthday">생일</label>
+		<!--<input type="date" id="birthday" name="birthday"-->
+		<input type="text" id="birthday"
+	       value="연도-월-일">
+		</li>
+		
+	</ol>
+	</fieldset>
+
+
+	<fieldset>
+	<legend>코딩 숙련도 (상.중.하)</legend>
+	<ol>
+		<li>
+		<label for = 'skill' > </label>
+		 <input type="range" id="volume" name="volume"
+	         min="0" max="11">
+		</li>
+		</ol>
+		</fieldset>
+	
+	<fieldset>
+	<input type = 'submit' value='제출'/>
+	</fieldset>
+	</fieldset>
+
+</form>
+
+</body>
+</html>

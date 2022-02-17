@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form>
+	<fieldset>
+	<legend>회원가입</legend>
+	<ol>
+		<li>
+			<label for='irum'>이름</label> 
+			<input type = 'text' id='irum'/>
+	 		</li>
+		
+		<li>
+			<label for ='gender'>성별</label>
+			<input type = 'radio' id='gender' name = 'gender'>남자
+			<input type = 'radio' id='gender' name = 'gender' checked='checked'>여자
+		</li>
+		
+		<li>
+			<label for="job">직업</label>
+
+			<select name="job" id="job">
+			  <option value="programmer">프로그래머</option>
+			  <option value="singer">가수</option>
+			  <option value="writer">작가</option>
+			  <option value="hotelier">호텔리어</option>
+			  
+			</select>
+		</li>
+		
+		<li>
+			<label for = 'hobby'>취미</label>
+			<input type = 'checkbox' id = 'hobby' name = 'hobby' checked='checked'> 잠자기
+			<input type = 'checkbox' id = 'hobby' name = 'hobby'> 먹기
+			<input type = 'checkbox' id = 'hobby' name = 'hobby'> 숨쉬기
+			<input type = 'checkbox' id = 'hobby' name = 'hobby'> 멍때리기
+		</li>
+		
+		<li>
+			<label for = 'love'>애인</label>
+			<input type = 'radio' id = 'love' name = 'love' > 있다
+			<input type = 'radio' id = 'love' name = 'love' > 없다
+		</li>
+		
+		<li>
+		 	<input type = 'submit' value='확인'/>
+		 	<input type = 'reset' value='취소'/>
+		 	
+		</li>
+	
+	</ol>
+	
+	</fieldset>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉터 만들기</title>
+<style>
+/* h3태그와 li태그의 컬러를 노랑으로 바꿔주세요*/
+	/* h3,li {color:yellow;} */
+/* div의 자식 div, strong 백그라운드색을 핑크로 바꿔주세요*/
+	/* div > div > strong {background-color : pink;} */
+/* ul의 자손 strong을 찾아서 컬러를 블루로 바꿔주세요*/
+	/* ul strong { color : green;} */
+/*
+	- 클래스 warning을 찾아서 색을 빨간색
+	- 클래스 main을 찾아서 배경색 aliceblue
+	- 아이디 list를 찾아서 배경색 mistyrose
+	- 아이디 list의 자손 span 글자색을 보라색
+*/
+
+	/* div.warning {color:red;}
+	body.main {background-color:aliceblue;}
+	ul#list {background-color:mistyrose;}
+	ul#list span {color:purple;} */
+	/*만약 아이디가 list의 자식인 span이라면*/
+	/* ul#list > li > span {color:purple;} */
+	
+	/*div의 자식인 div의 형제인 div, ul*/
+	div > div ~ div {background-color : cyan;}
+	div > div ~ ul {background-color : cyan;}
+	
+	/*h3의 첫번째 글자만 색을 빨강으로*/
+	h3:first-letter {color:red;}
+	
+	/*마우스가 올라가면(hover) 색 변경*/
+	li:hover {background-color:yellow;}
+	
+</style>
+</head>
+
+<body class="main">
+<h3> 우리들의 행복한 시간 </h3>
+<hr>
+<div> 
+	<div>오늘도 <strong>나는</strong>행복을 찾는 사람입니다.</div>
+	<ul id="list">
+ 		<li><span>차 한잔 하기</span></li>
+		<li><strong>좋은 음악 듣기</strong></li>
+		<li>재미있는 웹툰 보기</li>
+	</ul>
+	<div class="warning">인상쓰지 않기</div>
+</div>
+</body>
+</html>
