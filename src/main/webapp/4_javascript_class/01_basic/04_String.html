@@ -4,35 +4,41 @@
 <meta charset="UTF-8">
 <title> String 객체 </title>
 <script type="text/javascript">		
-	var str = '너의 삶 속에 나의 삶을 넣어 삶을 영위하자';
-	document.writeln( str.indexOf('삶') + '<br/>');
-	document.writeln( str.lastIndexOf('삶')+ '<br/>');
-	document.writeln( str.indexOf('삶을') + '<br/>');
-	document.writeln( str.length + '<br/>');
-	
-	document.writeln( str.startsWith('삶') + '<br/>');
-	document.writeln( str.endsWith('삶') + '<br/>');
-	document.writeln( str.includes('삶') + '<hr/>');
 
-	/*
-	var msg = '자바에서 웹프로젝트까지 열심히 하자!';
-	document.writeln( msg.charAt(3)+ '<br/>');
-	document.writeln( msg.slice( 5, 12 )+ '<br/>');
-	document.writeln( msg.substring( 5, 12 )+ '<br/>');
-	document.writeln( msg.substr(5, 7 ) + '<br/>');
-	document.writeln( msg.split(' ')+ '<br/>');
-	document.writeln( msg.concat('화이팅')+ '<br/>');
-	document.writeln( msg +  '<hr/>');
-	*/
+// 함수를 통해 무슨 결과가 나올지 예상
+	var str = '너의 삶 속에 나의 삶을 넣어 삶을 영위하자';  // 앞에서는 띄어쓰기 포함해서 0부터 - 뒤에서는 1부터
+	document.writeln( str.indexOf('삶') + '<br/>');  //3
+	document.writeln( str.lastIndexOf('삶')+ '<br/>'); //17 가장 마지막에 있는 것을 앞에서 부터 세기
+	document.writeln( str.indexOf('삶을') + '<br/>');//11
+	document.writeln( str.length + '<br/>'); //24
 	
-	/*
+	document.writeln( str.startsWith('삶') + '<br/>'); //false
+	document.writeln( str.endsWith('삶') + '<br/>');//false
+	document.writeln( str.includes('삶') + '<hr/>'); //true	
+
+	
+	var msg = '자바에서 웹프로젝트까지 열심히 하자!';
+	document.writeln( msg.charAt(3)+ '<br/>'); //서
+	document.writeln( msg.slice( 5, 12 )+ '<br/>');//웹프로젝트까지
+	document.writeln( msg.substring( 5, 12 )+ '<br/>');//웹프로젝트까지
+	document.writeln( msg.substr(5, 7 ) + '<br/>');//웹프로젝트까지
+	document.writeln( msg.split(' ')+ '<br/>');//자바에서,웹프로젝트까지,열심히,하자! - 공백마다 자르자
+	document.writeln( msg.concat('화이팅')+ '<br/>'); //자바에서 웹프로젝트까지 열심히 하자 화이팅 -> 덧붙이기 
+	document.writeln( msg +  '<hr/>');
+	
+	
+
 	var  text = '♡해yo';
 	document.writeln( text.length +  '<br/>');		
 	document.writeln( text.repeat(2) +  '<br/>');
 	document.writeln( text.codePointAt(0) +  '<br/>');	// 9825
 	document.writeln( String.fromCodePoint(9825) +  '<br/>');
-	*/
 	
+	document.writeln( String.fromCodePoint(128169) +  '<br/>');//이모티콘
+	
+	var text ='💩하yo';  //-> let으로 쓰면 안 나옴
+	document.writeln( text.length +  '<br/>');		
+
 
 	
 	

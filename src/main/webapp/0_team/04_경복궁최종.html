@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- 부트스트랩 -->
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/bootstrap-theme.css" rel="stylesheet">
+<link href="./css/bootstrap-theme.css.map" rel="stylesheet">
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>경복궁 만나기 10초 전</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<!-- 우리가 쓰는 부트스트랩 경로 아님!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<!--     Bootstrap core CSS
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    Just for debugging purposes. Don't actually copy these 2 lines!
+    [if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    [if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+
+    Custom styles for this template
+    . -->
+<!-- <link href="carousel.css" rel="stylesheet"> -->
+
+<style type="text/css">
+/*----------------------------------------------- */
+/* Padding below the footer and lighter body text */
+body {
+   padding-bottom: 40px;
+   color: #5a5a5a;
+   font-family: 'NotoSansKR-Regular.otf';
+   background-image:url(./images/배경1.jpg);
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+   position: absolute;
+   top: 0;
+   right: 0%;
+   left: 0%;
+   z-index: 20;
+}
+
+/******************************* 로그인 회원가입 버튼 관련 ***********************8*/
+.myloginarea {
+   clear: both;
+   position: absolute;
+   width: 200;
+   height: 30px;
+   float: right;
+   top: 10px;
+   right: 100px;
+}
+/******************************* 로그인 회원가입 버튼 색/ 배경색 관련 ***********************8*/
+.delbtn {
+   border: none;
+   background-color: transparent;
+   color: white;
+   margin-top :30px; 
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper>.container {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+.navbar-wrapper .navbar {
+   padding-right: 0px;
+   padding-left: 0px;
+   text-align: center;
+}
+
+/************************메뉴 바 투명하게*****************/
+.navbar-wrapper .navbar .container {
+   width: auto;
+   background-color: transparent;
+}
+
+/**********메뉴 글씨 하안색*/
+div>ul>li>a {
+   color: white;
+   text-shadow: 2px 2px 2px gray;
+   margin-top: 30px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+
+/* **********************************************************본문이랑 붙지 않게margin 300px 로 바꿈********************************************************** */
+.carousel {
+   height: 500px;
+   margin-bottom: 300px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+   z-index: 50;
+}
+
+/* **********************************************************글씨 왼쪽 정렬 / 윗줄 밑줄 **********************************************************  */
+.carousel-caption>h1 {
+   text-align: left;
+   border-top: 1px solid white;
+   width: 600px;
+   font-family: 'Gaegu', cursive;
+font-family: 'Gowun Dodum', sans-serif;
+}
+
+.carousel-caption>h2 {
+   text-align: left;
+   border-bottom: 1px solid white;
+   width: 300px;
+   font-family: 'Gaegu', cursive;
+font-family: 'Gowun Dodum', sans-serif;
+}
+
+/*================================================================*/
+.carousel-caption:hover {
+   width: 500px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+   height: 700px;
+   background-color: #777;
+}
+
+/* **********************************************************이미지 높이 700으로 바꿈 **********************************************************  */
+.carousel-inner>.item>img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   min-width: 100%;
+   height: 700px;
+}
+
+carousel-inner {
+   
+}
+
+/* **********************************************************메인 이미지 효과 **********************************************************  */
+.first-slide {
+   -webkit-filter: opacity(65%)
+}
+
+.first-slide:hover {
+   -webkit-filter: opacity(85%);
+   -webkit-transition-duration: 1s;
+}
+
+.carousel-indicators {
+   position: relative;
+   left: 50px;
+   bottom: 30px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.marketing h2 {
+   font-weight: normal;
+}
+
+.marketing .col-lg-4 p {
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+/* Featurettes
+------------------------- */
+.featurette-divider {
+   margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+   font-weight: 300;
+   line-height: 1;
+   letter-spacing: -1px;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media ( min-width : 768px) {
+   /* Navbar positioning foo */
+   .navbar-wrapper {
+      margin-top: 20px;
+      padding-right: 0px;
+      padding-left: 0px;
+   }
+   .navbar-wrapper .container {
+      padding-right: 15px;
+      padding-left: 15px;
+   }
+   .navbar-wrapper .navbar {
+      padding-right: 0;
+      padding-left: 0;
+   }
+
+   /* The navbar becomes detached from the top, so we round the corners */
+   .navbar-wrapper .navbar {
+      border-radius: 4px;
+   }
+
+   /* Bump up size of carousel content */
+   .carousel-caption p {
+      margin-bottom: 20px;
+      font-size: 21px;
+      line-height: 1.4;
+   }
+   .featurette-heading {
+      font-size: 50px;
+   }
+}
+
+@media ( min-width : 992px) {
+   .featurette-heading {
+      margin-top: 120px;
+   }
+}
+
+.rounded {
+   border-radius: .80rem !important
+}
+
+#근정전 {
+   width: 80%;
+   -webkit-transition-property: width;
+   -webkit-transition-duration: 1s;
+}
+
+#근정전:hover {
+   width: 100%;
+}
+
+#경회루 {
+   width: 80%;
+   -webkit-transition-property: width;
+   -webkit-transition-duration: 1s;
+}
+
+#경회루:hover {
+   width: 100%;
+}
+
+#광화문 {
+   width: 80%;
+   -webkit-transition-property: width;
+   -webkit-transition-duration: 1s;
+}
+
+#광화문:hover {
+   width: 100%;
+}
+
+#자경전 {
+   width: 80%;
+   -webkit-transition-property: width;
+   -webkit-transition-duration: 1s;
+}
+
+#자경전:hover {
+   width: 100%;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@font-face{
+   src: url("./fonts/NotoSansKR-Regular.otf");
+    font-family: "NotoSansKR-Regular.otf"; 
+   
+ }
+ 
+ /*footer 영역*/
+
+element.style {
+}
+   
+
+.footer_menus ul li a {
+    width: 100%;
+}
+
+footer#footer { padding:0; }
+    .footer_wrap { background:#554c46; left:0; margin-left:0; padding:0 0 0 0; width:100%; }
+    .footer_menus ul { border-bottom:1px solid #403a36; width:100%;margin-bottom:0 }
+    .footer_menus ul li a {background:#645952;color:#e6dbd3;display:block;font-size:14px;line-height:40px;text-indent: 10px;}
+
+.footer_menus ul li.footer_menu_ttl { position:relative; }
+    .footer_menus ul li.footer_menu_ttl a { color:#fff; background:#554c46; font-size:12px; line-height:50px; } 
+    .footer_menus ul li.footer_menu_ttl a span.footer_arrow_down { background:url("../img/footer/mobile_footer_arrow_down.png") no-repeat; background-size:20px auto; display:block; height:11px; margin-top:-5px; right:10px; position:absolute; top:50%; width:20px; }
+    .footer_menus ul li.footer_menu_ttl a span.footer_arrow_up { background:url("../img/footer/mobile_footer_arrow_up.png") no-repeat; background-size:20px auto; display:block; height:11px; margin-top:-5px; right:10px; position:absolute; top:50%; width:20px; }
+
+footer#footer {
+    background: #2C2A29;
+    clear: both;
+    position: relative;
+    width: 100%;
+}
+
+
+</style>
+</head>
+<!-- NAVBAR
+================================글씨 아무거나 넣음!!!!!!!!!!!!!!!================== -->
+<body>
+   <div class="navbar-wrapper">
+      <div class="container">
+
+         <nav class="navbar fixed-top justify-content-center">
+
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed"
+                     data-toggle="collapse" data-target="#navbar"
+                     aria-expanded="false" aria-controls="navbar">
+                     <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href=""><img id ="icon" alt="Brand" src="./images/이미지파일/경복궁아이콘2.png"></a>
+                  
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li class="active"><a href="#">Home</a></li>
+                     <li><a href="#about">관광 코스</a></li>
+                     <li><a href="#contact">해설 안내</a></li>
+                     <li><a href="#event">이벤트</a></li>
+
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <!--**************************** 로그인 네비바 따로 만듦****************** -->
+
+         <div class="myloginarea">
+            <button type="button" class="delbtn" href="#" role="button">Sign
+               up</button>
+            <button type="button" class="delbtn " class="btn" href="#"
+               role="button">log in</button>
+
+         </div>
+
+      </div>
+   </div>
+
+
+   <!-- Carousel
+    ================================================== -->
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+         <li data-target="#myCarousel" data-slide-to="1"></li>
+         <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+         <div class="item active">
+            <img class="first-slide" src="./images/gyeongbokgung-palace.jpg"
+               alt="First slide">
+            <div class="container">
+               <div class="carousel-caption">
+                  <h1>
+                     <span style='font-size: 60pt; vertical-align: text-middle;'>경복궁
+                        만나기</span>
+                  </h1>
+                  <h2>
+                     <span style='font-size: 55pt; vertical-align: text-middle;'>10초
+                        전</span>
+                  </h2>
+
+                  <!--  두번째 , 세 번째 사진  -->
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <img class="second-slide" src="./images/야경.jpg" alt="Second slide">
+            <div class="container">
+               <div class="carousel-caption">
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <img class="third-slide" src="./images/자경전.jpg" alt="Third slide">
+            <div class="container">
+               <div class="carousel-caption">
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button"
+         data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+         aria-hidden="true"></span> <span class="sr-only">Previous</span>
+      </a> <a class="right carousel-control" href="#myCarousel" role="button"
+         data-slide="next"> <span
+         class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+      </a>
+   </div>
+   <!-- /.carousel -->
+
+   <!-- Marketing messaging and featurettes
+    ================================================== -->
+   <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+   <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+         <div class="col-lg-3">
+            <img class="img-circle" src="./images/이미지파일/사계절/봄.jpg"
+          
+               alt="Generic placeholder image" width="140" height="140">
+            <h2>경회루</h2>
+            <p>경복궁 봄</p>
+            <p>
+               <a class="btn btn-default" href="#경회루" role="button">View
+                  details &raquo;</a>
+            </p>
+         </div>
+         <!-- /.col-lg-4 -->
+         <div class="col-lg-3">
+            <img class="img-circle" src="./images/이미지파일/사계절/여름.jpg"
+               alt="Generic placeholder image" width="140" height="140">
+            <h2>근정전</h2>
+            <p>경복궁의 여름</p>
+            <p>
+               <a class="btn btn-default" href="#근정전" role="button">View
+                  details &raquo;</a>
+            </p>
+         </div>
+         <!-- /.col-lg-3 -->
+         <div class="col-lg-3">
+            <img class="img-circle" src="./images/이미지파일/사계절/가을.jpg"
+               alt="Generic placeholder image" width="140" height="140">
+            <h2>광화문</h2>
+            <p>경복궁의 가을</p>
+            <p>
+               <a class="btn btn-default" href="#광화문" role="button">View
+                  details &raquo;</a>
+            </p>
+         </div>
+         <!-- /.col-lg-4 -->
+         <div class="col-lg-3">
+            <img class="img-circle" src="./images/이미지파일/사계절/겨울.jpg"
+               alt="Generic placeholder image" width="140" height="140">
+            <h2>자경전</h2>
+            <p>경복궁의 겨울</p>
+            <p>
+               <a class="btn btn-default" href="#자경전" role="button">View
+                  details &raquo;</a>
+            </p>
+         </div>
+         <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+         <div class="col-md-7">
+            <h2 class="featurette-heading">
+               경회루 <span class="text-muted">慶會樓</span>
+            </h2>
+            <p class="lead">
+               慶會 : 경사스러운 연회 <br />
+            </p>
+
+            <p>
+               침전인 강녕전 서쪽 연못 안에 조성된 누각으로 외국사신 또는 군신간의 연회장소이며, 임금은 올바른 사람을 얻어야만 정사를
+               바로 할 수 있다는 의미에서 경사스러운 모임이 있는 장소로 사용되었다.<br />
+            </p>
+
+            외국사신의 접대나 임금과 신하 사이에 벌어지는 연회장소로 사용할 목적으로 만들어졌다. 경복궁 창건 당시는 작은 누각이었던
+            것을 태종 12년(1412)에 크게 연못을 파고 지금과 같은 규모로 만들었다. 그 후 성종 때 건물이 기울어져 다시 고쳐
+            지었는데 돌기둥에 용과 꽃 장식을 하여 화려하게 치장하고, 연산군 때에는 연못 안 인공섬에 만세산을 조성하고, 그 곳에
+            월궁을 꾸며 조화를 장식하였으나, 임진왜란 때 화재로 모두 소실되었다. 경회루건물은 없어졌지만, 경복궁이 중건될 때까지
+            연못은 나라에 가뭄이 들 때마다 기우제를 지내는 곳으로 이용되었다.
+            </p>
+
+            <p>경회루는 침전영역 서쪽에 위치한 연못 안에 조성된 누각이다. 외국사신의 접대나 임금과 신하 사이에 벌어지는
+               연회장소로 사용할 목적으로 만들어졌다. 경복궁 창건 당시는 작은 누각이었던 것을 태종 12년(1412)에 크게 연못을
+               파고 지금과 같은 규모로 만들었다. 그 후 성종 때 건물이 기울어져 다시 고쳐 지었는데 돌기둥에 용과 꽃 장식을 하여
+               화려하게 치장하고, 연산군 때에는 연못 안 인공섬에 만세산을 조성하고, 그 곳에 월궁을 꾸며 조화를 장식하였으나,
+               임진왜란 때 화재로 모두 소실되었다. 경회루건물은 없어졌지만, 경복궁이 중건될 때까지 연못은 나라에 가뭄이 들 때마다
+               기우제를 지내는 곳으로 이용되었다.</p>
+            <p>경회루 연못에서 용이 나왔다는데 사실인가?</p>
+            <p>
+               경회루 연못에서 청동으로 만든 용(龍) 두 마리가 발견되었어요.<br /> 1997년에 경회루 연못을 청소하려고 물을
+               뺐더니 용 두 마리가 있었던 것이죠.<br /> 발견된 용은 길이가 146.5㎝, 넓이가 14.2㎝, 무게가
+               66.5㎏입니다.<br /> 옛날부터 용은 물을 다스리고 비를 내리게 할 수 있는 신비한 동물로 생각되었답니다. <br />
+               옛날 기록에 보면 왕의 명령으로 연못 북쪽에 용을 넣었는데 경회루에 불이 나지 않도록 빌기 위해서라고 합니다.<br />
+               우리나라는 옛날에 나무로 건물을 지었어요. 나무는 불에 약하기 때문에 불이 나면 쉽게 타버립니다.<br /> 나무로
+               지어진 경회루가 불에 타지 않도록 바라는 마음에 비를 내리는 용을 연못에 넣어 둔 것이죠.<br /> 지금은 경회루
+               연못이 아니라 국립고궁박물관에 전시 중입니다. 박물관에 찾아가서 용의 생김새를 보고 싶지 않나요?
+            </p>
+            <br />
+
+         </div>
+         <div class="col-md-5">
+            <img id="경회루"
+               class="rounded float-right featurette-image img-responsive center-block "
+               src="./images/이미지파일/경회루/경회루.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px"> <img id="경회루"
+               class="float-right featurette-image img-responsive center-block "
+               src="./images/이미지파일/경회루/경회루 겨울.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px"> <img id="경회루"
+               class=" float-right featurette-image img-responsive center-block"
+               src="./images/이미지파일/경회루/경회루 상층.jpg" alt="Generic placeholder image">
+         </div>
+      </div>
+
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+         <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">
+               근정전 <span class="text-muted">勤政殿</span>
+            </h2>
+            <p class="lead">勤政 : 정치를 부지런히 함</p>
+            <p>경복궁의 정전(正殿)이다. 왕이 신하들의 조하(朝賀:조회의식)를 받거나 공식적인 대례(大禮) 또는 사신을
+               맞이하던 곳이다. 정전인 근정전은 궁궐 내에서도 가장 규모가 크고 격식을 갖춘 건물로 면적도 가장 넓게 차지하고 있다.
+               중층으로 된 근정전 건물은 2단의 높은 월대(月臺) 위에 자리하고 있으며 전면에는 중요행사를 치룰 수 있는 넓은마당이
+               있고, 그 둘레를 행각이 감싸고 있다.</p>
+
+            <p>남쪽 행각의 가운데에는 3간으로 구성되어 있는 근정문이 있으며 그 좌우에 일화문(日華門 - 日華 : 해의
+               정화)과 월화문(月華門 - 月華 : 달의 정화)이 있고 동쪽 행각에는 융문루(隆文樓)가, 서쪽 행각에는 융무루(隆武樓)가
+               있다. 정전 영역의 입구인 근정문은 왕과 신하가 만나는 조참(朝參)행사를 하는 곳이다. 왕은 근정문의 가운데 칸에 어좌를
+               설치하고 남향으로 앉고, 신하들은 흥례문 일곽에 도열하여 임금에게 예를 올렸다. 즉, 근정문은 단지 드나드는 출입문의
+               역할만을 하는 곳이 아니라 정치적인 활동이 시작되는 곳이다.</p>
+            <p>근정전 마당에 세워져 있는 돌은 무엇일까?</p>
+            <p>
+               경복궁 근정전에 들어서면, 넓은 마당이 있고 웅장하게 높은 근정전 건물이 보입니다.<br /> 근정전까지 이어진 길은
+               ‘어도’라고 하지요. 그런데, 어도 좌우에 비석처럼 생긴 돌들이 줄지어 서 있는 것을 볼 수 있어요.<br /> 이
+               돌들은 무엇일까요? 이 돌들은 ‘품계석’이라고 해요. <br /> 품계석은 근정전에서 행사를 할 때 신하들이 자신의
+               지위에 맞게 줄을 설 수 있도록 표시한 돌들입니다.<br /> 품계석은 근정전을 바라보면서 오른쪽(동쪽)에 있는
+               품계석에는 문신들이 차례로 줄을 서고 왼쪽(서쪽)에는 무신들이 품계석에 따라 줄을 서게 되죠.<br /> 참고로 조정
+               마당에 깔린 돌들은 ‘박석’이라고 해요. 박석 겉 부분은 거칠어서 걷기에 힘들 수 있어요.<br /> 그런데, 거친
+               박석을 놓은 것은 신하들이 조심스럽게 다니도록 일부러 만들었다고 합니다.<br /> 우리들도 조심스럽게 경복궁을 구경하면
+               더 좋겠죠.
+            </p>
+
+            <p>남쪽 행각의 가운데에는 3간으로 구성되어 있는 근정문이 있으며 그 좌우에 일화문(日華門 - 日華 : 해의
+               정화)과 월화문(月華門 - 月華 : 달의 정화)이 있고 동쪽 행각에는 융문루(隆文樓)가, 서쪽 행각에는 융무루(隆武樓)가
+               있다. 정전 영역의 입구인 근정문은 왕과 신하가 만나는 조참(朝參)행사를 하는 곳이다. 왕은 근정문의 가운데 칸에 어좌를
+               설치하고 남향으로 앉고, 신하들은 흥례문 일곽에 도열하여 임금에게 예를 올렸다. 즉, 근정문은 단지 드나드는 출입문의
+               역할만을 하는 곳이 아니라 정치적인 활동이 시작되는 곳이다.</p>
+         </div>
+         <div class="col-md-5 col-md-pull-7">
+            <img id="근정전" class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/근정전/근정전.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px"> <img id="근정전"
+               class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/근정전/근정전2.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px"> <img id="근정전"
+               class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/근정전/근정전 내부.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px">
+         </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+         <div class="col-md-7" id='본문3'>
+            <h2 class="featurette-heading">
+               광화문<span class="text-muted"> 光化門</span>
+            </h2>
+            <p class="lead">光化 : 군주에 의한 덕화(德化)</p>
+            <p>
+               광화문은 경복궁의 정문이다. 광화문은 조선의 법궁에 해당하는 궁궐의 정문으로서 다른 궁궐들의 정문과는 달리 돌로 높은
+               석축을 쌓고 그 위에 중층구조의 누각을 세워서 마치 성곽의 성문과 같은 격식으로 장대하게 지어졌다.<br /> 광화문은
+               중층으로 된 문루를 받치는 기단석축이 세 개의 홍예문으로 이루어져 있는데, 중앙의 홍예문으로는 왕이, 좌우의 홍예문으로는
+               왕세자와 신하들이 출입하였다.<br /> 또한 문루(門樓)에는 종을 걸어 두어 시각을 알리는데 사용하였다.<br />
+               광화문은 일제강점기에 조선총독부 건물을 지으면서 건춘문 북쪽으로 옮겼다가 한국전쟁 때 폭격을 맞아 문루가 모두
+               소실되었다.<br /> 그 후 1968년에 경복궁 정문의 위치로 다시 옮겼으나 나무를 사용하지 않고 콘크리트 구조로
+               복원하는 과정에서 위치 또한 제자리를 찾지 못하였다.<br /> 현재의 광화문은 2010년에 원래의 모습으로 제자리를
+               찾아서 다시 복원한 것이다.<br /> 또한, 광화문 홍예 개판에는 ‘사령(四靈)’ 인 기린, 봉황, 거북이가 그려져
+               있는데 이것은 1968년 광화문 복원시 그려진 것을 현황 모사한 것이다.
+            </p>
+            <p>광화문 앞에 있는 동물상은 무엇일까?</p>
+            <p>
+               광화문 좌우에 호랑이처럼 생긴 조각상이 있어요. 이 조각상을 ‘해태’라고 해요.<br /> 해태는 상상의 동물로
+               해치라고도 불렀는데, 사람들의 잘잘못을 가려서 잘못이 있는 사람은 벌로 머리에 난 뿔을 사용하여 찔렀다고 합니다.<br />
+               지금은 해태상이 광화문 바로 앞 좌우에 있지만 원래는 광화문 앞에서 대략 50미터 떨어진 곳에 있었지요.<br />
+               궁궐에 들어오는 사람은 가마나 말을 타고 올 때 해태상 앞에서부터는 가마와 말에서 내린 후에 걸어서 경복궁에 들어갔다고
+               합니다.<br />
+            </p>
+         </div>
+         <div class="col-md-5">
+            <img id="광화문"
+               class="featurette-image img-responsive center-block rounded"
+               src="./images/이미지파일/광화문/광화문.jpg" alt="Generic placeholder image"
+               style="margin-bottom: 10px"> <img id="광화문"
+               class="featurette-image img-responsive center-block rounded"
+               src="./images/이미지파일/광화문/광화문_해태.jpg"
+               alt="Generic placeholder image" style="margin-bottom: 10px">
+            <img id="광화문"
+               class="featurette-image img-responsive center-block rounded"
+               src="./images/이미지파일/광화문/광화문_수문장_교대.jpg"
+               alt="Generic placeholder image" style="margin-bottom: 10px">
+         </div>
+
+      </div>
+
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+         <div class="col-md-7 col-md-push-5" id='본문4'>
+            <h2 class="featurette-heading">
+               자경전<span class="text-muted"> 慈慶殿</span>
+            </h2>
+            <p class="lead">慈慶 : 자친(어머니)이 복을 누린다</p>
+            <p>
+               흥선대원군이 경복궁을 중건하면서 고종의 양어머니가 되었던 조대비(신정왕후)를 위하여 지은 건물이다.<br /> 건물을
+               지은 지 얼마 지나지 않아 화재로 소실된 것을 고종 25년(1888)에 다시 지어 지금까지 남아 있다.<br />
+               44간의 규모로 지어진 이 건물은 온돌방으로 꾸며진 복안당과 자경전, 동남쪽의 청연루로 구성되어 있으며 청연루의 동측으로
+               협경당(協慶堂 - 協慶 : 함께 복(경사)를 누린다)이 연결되어 있다.<br /> 자경전 남쪽으로 행각이 자리하고 있으며
+               그 가운데에 여자들이 여닫기 쉽게 가벼운 당판문으로 된 만세문(萬歲門 - 萬歲 : 긴 시간)이 있다.
+            </p>
+            <p>자경전 십장생 굴뚝의 문양에는 무엇이 있을까?</p>
+            <p>
+               자경전 뒤편 담장에는 ‘십장생 굴뚝’이 있어요. 건강하게 오래 살라는 의미가 담긴 십장생이 굴뚝에 새겨져 있어서 ‘십장생
+               굴뚝’이라고 부르지요.<br /> 굴뚝 벽면을 보면, 가운데에 커다란 조각이 있고 위 아래에 작은 그림들이 있지요.<br />
+               가운데 커다란 그림이 십장생 조각입니다.<br /> 그 안에는 해, 산, 구름, 바위, 소나무, 대나무, 거북이, 사슴,
+               학, 불로초 등이 새겨져 있어요.<br /> 그리고 십장생 조각 위 아래에 불가사리와 학이 새겨져 있어요. 불가사리는
+               불을 잡아먹는다는 상상의 동물이지요.<br /> 또 다른 조각이 숨어 있는데, 어디에 있을까요? 십장생 굴뚝 옆에
+               ‘박쥐’와 ‘당초(식물)’이 새겨져 있어요.<br /> 옛날에는 박쥐가 행운을 가져다준다고 생각했었지요.
+            </p>
+         </div>
+         <div class="col-md-5 col-md-pull-7">
+            <img id="자경전" class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/자경전/자경전전각.jpg"
+               alt="Generic placeholder image" style="margin-bottom: 10px">
+            <img id="자경전" class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/자경전/자경전천장.jpg"
+               alt="Generic placeholder image" style="margin-bottom: 10px">
+            <img id="자경전" class="featurette-image img-responsive center-block"
+               src="./images/이미지파일/자경전/자경전굴뚝.jpg"
+               alt="Generic placeholder image" style="margin-bottom: 10px">
+         </div>
+      </div>
+
+
+      <!-- /END THE FEATURETTES -->
+
+
+        <!-- FOOTER -->
+      <footer id='footer'>
+         <div class='footer_wrap'>
+            <div class='footer_menus'>
+               <ul class='footer_first_menu'>
+               <li class='footer_menu_ttl'>
+                  <a class='en' href='javascript:void(0);'>
+                  "NOTICE"
+                  <span class='footer_arrow_down'></span>
+                  
+                  </a>
+               </li>
+               <li>
+               <a href='https://www.royalpalace.go.kr/content/board/list.asp'>공지사항</a>
+               </li>
+               <li>
+               <a href='https://www.royalpalace.go.kr/content/guide/guide01_tab02.asp'>관람 규칙 및 규정</a>
+               </li>
+               <li>
+               <a href='https://www.royalpalace.go.kr/content/guide/guide01_tab05.asp'>편의 시설 안내</a>
+               </li>
+               </ul>
+            <ul>
+               <li class='footer_menu_ttl'>
+                  <a class='en' href='javascript:void(0);'>
+                  "ONLINE COMMUNITY"
+                  <span class='footer_arrow_down'></span>
+                  </a>
+               </li>
+               <li>
+                  <a href='https://twitter.com/royalpalacego'>트위터</a>
+               </li>
+               <li>
+                  <a href='https://www.instagram.com/gyeongbokgung_palace_official/'>인스타그램</a>
+               </li>
+            </ul>   
+            
+            </div>
+         
+         </div>
+
+         
+         
+         <p class="pull-right">
+            <a href="#">Back to top</a>
+         </p>
+         <p>
+            &copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot;
+            <a href="#">Terms</a>
+         </p>
+
+
+      </footer>
+   <!-- /.container -->
+
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script src="../../dist/js/bootstrap.min.js"></script>
+   <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+   <script src="../../assets/js/vendor/holder.js"></script>
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

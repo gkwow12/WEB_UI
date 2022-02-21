@@ -1,0 +1,11 @@
+*요소(element=tag)에 이벤트 연결
+
+(1) HTML에서 직접 연결
+<요소 onclik='함수명()'>
+
+(2) 이벤트 핸들러 방식 : HTML와 JS 분리
+
+(3) 이벤트 리스너
+
+요소.addEventListener('이벤트명', 함수)
+요소.addEventListener('이벤트명', 함수, false)

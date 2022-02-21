@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,18 +6,41 @@
 <script type="text/javascript">	
  	
 	var d = new Date('2023/08/15');
-	document.writeln( d  + '<br/>');
-	document.writeln( d.getYear()  + '<br/>');
-	document.writeln( d.getFullYear()  + '<br/>');
-	document.writeln( d.getMonth()  + '<br/>');
-	document.writeln( d.getDate()  + '<br/>');
-	document.writeln( d.getDay()  + '<br/>');
+	document.writeln( d  + '<br/>');//날 전체 다 
+	document.writeln( d.getYear()  + '<br/>');//두자리 뽑아서 100을 더함 -> 의미 없음
+	document.writeln( d.getFullYear()  + '<br/>');//2023
+	document.writeln( d.getMonth()  + '<br/>');//7 -> month는 외국에서 숫자 개념이 아니기 때문에 0부터 시작함
+	document.writeln( d.getDate()  + '<br/>');//15
+	document.writeln( d.getDay()  + '<br/>');//(화 : 2) = 일요일(0)부터 시작
 
 
+	// 오늘날짜
+	var today = new Date();
+	document.writeln( '<hr/>' + today  + '<hr/>');
+	document.writeln( today.toLocaleString()  + '<br/>');
+	document.writeln( today.toGMTString() + '<br/>');
+	document.writeln( today.toDateString() + '<br/>');
+	
+	let v = new Date();
+	// month는 하나 빼서 입력
+	v.setFullYear(2013);
+	v.setMonth(4);
+	v.setDate(5);
+	document.writeln('<hr/>' + v + '<hr/>')
 	
 	
+	var today = new Date();
+	today.setMonth( today.getMonth() - 3)
+	document.writeln(today.toDateString() + '<br/>');
 	
+	// 오늘 날짜에서 20일 더하면?
+	var today = new Date();
+	today.setDate( today.getDate() + 20) 
+	document.writeln('<hr/>' + today  + '<hr/>')
+	//-> 원본 수정됨 20일 더한 상태
 	
+	today.setDate(0) // 전 월의 마지막 날
+		document.writeln('<hr/>' + today  + '<hr/>')  //-> 2022.02.21의 20일을 더한 후 그 날의 전 월 마지막 날 
 	</script>
 
 </head>

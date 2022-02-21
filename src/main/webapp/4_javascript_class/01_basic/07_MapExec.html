@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form id ='frm' action= ''>
+
+아이디 : <input type="text" id='loginId'><br/>
+패스워드 : <input type="text" id= 'loginPw'><br/>
+<input type='submit' id='ok'>
+</form>
+
+<script type="text/javascript">
+
+
+		let m = new Map();
+		m.set('java','1111');
+		m.set('script','2222');
+		m.set('nodejs', '2222');
+
+
+document.getElementById('frm').onsubmit = function(){
+	let inputKey = document.getElementById('loginId').value;
+	let inputPw = document.getElementById('loginPw').value;
+	
+	for(let [k,v] of m) {
+		if( inputKey == k && inputPw == v) {
+		alert('로그인 성공');
+		break;
+	}
+}
+}
+
+</script>
+
+</body>
+</html>

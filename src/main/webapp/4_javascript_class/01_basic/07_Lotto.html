@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로또번호</title>
+<script type="text/javascript">
+
+
+	/* let s = new set();
+	while(s.size<6){
+	   let num = Math.floor((45*Math.random())+1);
+	   s.add(num);
+	  }
+	  let arr =Array.from(s);
+	  arr.sort();
+	  for(let i of arr) {
+		  document.write(i+'');
+	  } */
+	  
+	  let s = new Set();
+	  while(s.size<6){
+	  	let num = Math.floor((45*Math.random())+1);
+	  	s.add(num);
+	  }
+
+	  let arr = Array.from(s);
+	  arr.sort();
+
+	  for(let i of arr){
+	  	document.write(i + ' ');
+	  }
+		
+	
+</script>
+</head>
+<body>
+
+	 
+
+</body>
+</html>

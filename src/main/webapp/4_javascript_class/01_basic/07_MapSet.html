@@ -12,10 +12,31 @@ m.set('script','2222');
 m.set('nodejs', '2222');
 m.set('java','3333');
 
+for(let key of m.keys()) {
+	document.writeln( key + '<br/>');
+}
+for(let v of m.values()) {
+	document.writeln( v + '<br/>');
+}
+for(let item of m) {
+	document.writeln( item + '<br/>');
+}
+for(let [k,v] of m) {
+	document.writeln( k + ":" + v + '<br/>');
+}
+
+//로그인확인 처리를 한다라고 가정
+
+let inputKey = 'java'
+let inputPw = '3333'
 
 
-
-
+	for(let [k,v] of m) {
+		if( inputKey == k && inputPw == v) {
+		alert('로그인 성공');
+		break;
+	}
+}
 
 /* [참고] Map과 객체 리터럴의 차이 
  	1) 객체 리터럴은 문자열로 프라퍼티명을 지정하지만, Map의 키는 임의의 형으로 설정한다
@@ -24,8 +45,17 @@ m.set('java','3333');
  */
 
  
+ var m2 = new Map();
+ m2.set(1,'홍길동');
+ m2.set('1','홍길자');
  
+ document.write( m2.get('1') + '<br/>');
+ document.write( m2.get(1) + '<br/>');
  
+ m2.set(NaN, '홍홍홍');
+ document.write( m2.get(NaN) + '<hr/>');
+ //document.write( NaN == NaN);
+ document.write( '<br/>');
  
 //-------------------------------------------------------
 // 2. Set  : 중복 값을 허용하지 않는 집합 관리 객체
@@ -34,6 +64,20 @@ s.add('tiger');
 s.add('dog');
 s.add('lion');
 s.add('dog');
+
+s.add( { temp : 1})
+s.add( { temp : 1})
+
+for(let value of s) {
+	 document.write( value + '<br/>');
+	 console.log(value);
+	 
+}
+/*for(let value2 in s) {
+	 document.write( value2 + '<br/>');
+}*/
+
+
 
 
 </script>

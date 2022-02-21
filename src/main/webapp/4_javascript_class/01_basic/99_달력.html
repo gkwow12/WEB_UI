@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <!-- 
+      자바스크립트에서 오늘 날짜의 해당하는 월을 달력 그리기
+      -new Date()클래스
+      -화면은 테이블 표 를 그리기
+    -->
+    
+<script type="text/javascript">
+   var today = new Date();
+   var max =today.setMonth(today.getMonth() + 1);
+   
+   var date = ['일','월','화','수','목','금','토'];
+   
+   max = today.setDate(0);
+   max = today.getDate();
+   
+   var day = today.setDate(0);
+   day = today.setDate(today.getDate()+1)
+   day = today.getDay();
+   var cnt = 1;
+   document.writeln("<table border='1'><tr>")
+   for(let i = 0; i<date.length; i++){
+      document.writeln("<td>" + date[i] + "</td>");
+   }
+   document.writeln("</tr>")
+   
+   
+   for(let i = 0; i<5; i++){
+      document.writeln("<tr>")
+      
+      for(let j = i*7; j<(i*7)+7;j++){
+         if(j<day || j>max+1){
+         document.writeln("<td></td>");
+         }
+         else{
+         document.writeln("<td>"+ cnt + "</td>");   
+            cnt++;
+         }
+      }
+      document.writeln("</tr>");
+   }
+   document.writeln("</table>");
+</script>
+</head>
+<body>
+   <table></table>
+</body>
+</html>
