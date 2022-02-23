@@ -1,7 +1,7 @@
 <!-- 
 	인자있는 자바스크립스 함수 호출
 	
-	[연습] 이벤트 핸들러 방식이나 이벤트 리스너 방식으로 수정하세요 
+	[연습] 아이디 부여한 자바스크립트
  -->
  
 <!DOCTYPE html>
@@ -12,9 +12,9 @@
 </head>
 <body>
 	<form name="frm">
-		<input type="button" value="스타일 A" onclick="JavaScript:changeColor('A')">
-		<input type="button" value="스타일 B" onclick="JavaScript:changeColor('B')">
-		<input type="button" value="스타일 C" onclick="JavaScript:changeColor('C')">
+		<input id= 'btnA' type="button" value="스타일 A" >
+		<input id= 'btnB' type="button" value="스타일 B" >
+		<input id= 'btnC' type= "button" value="스타일 C" >
 	</form>
 	<ul>
 		<li><a href="http://www.cnn.com"> 여기는 미쿡 </a></li>
@@ -27,14 +27,27 @@
 			물론, 지금은 그럴 필요가 없지만 < body > 태그 안에 넣어봤음.
 	 -->
 	<script type="text/javascript">
-		function changeColor( colorVar )   // 함수 인자에 var도 쓰면 안됨
-		{
-			
-			// alert("넘겨받은 인자값 : " + colorVar);
-			// colorVar로 넘겨받은 값에 의해 분기하고자 switch~case 문 이용이 바람직
-
+		let btnA = document.getElementById('btnA');
+		btnA.onclick = function() {
+			document.bgColor = 'pink';
+			document.fgColor = 'blue';
 			
 		}
+		
+		let btnB = document.getElementById('btnB');
+		btnB.onclick = function() {
+			document.bgColor = 'blue';
+			document.fgColor = 'pink';
+			
+		}
+		
+		let btnC = document.getElementById('btnC');
+		btnC.onclick = function() {
+			document.bgColor = 'pink';
+			document.fgColor = 'blue';
+			
+		}
+		
 	</script>
 </body>
 </html>

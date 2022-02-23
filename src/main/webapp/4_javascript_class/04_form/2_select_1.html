@@ -4,6 +4,23 @@
 <meta charset="UTF-8">
 <title> 이벤트 예제 2 </title>
 <script type="text/javascript">
+
+window.onload = function() {
+	//요소 찾아서 변수에 담기
+	let mango = document.frm.mango;
+	let avocado = document.frm['avocado'];
+	
+	mango.onchange = calc; // 괄호 넣으면 호출되기 때문에 넣지 않기 여기에는  
+	avocado.onchange = calc;
+		function calc() {
+			//총합 요소의 값(합계 name) = 망고 값 * 4000 + 아보타도 값 * 5000
+			document.frm.total.value = mango.value*4000 + avocado.value*5000;
+			
+			
+	}
+}
+
+
 </script>
 	
 </head>

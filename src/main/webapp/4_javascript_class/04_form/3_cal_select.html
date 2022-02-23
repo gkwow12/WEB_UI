@@ -17,9 +17,9 @@
 <script type="text/javascript">
 //오늘 날짜 구하기
 var today = new Date();
-var year = today.getFullYear();
-var month = today.getMonth();
-var date = today.getDate();
+var year = today.getFullYear(); //2022
+var month = today.getMonth();	//1
+var date = today.getDate();		//23
 
 var lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var weeks = ['일','월','화','수','목','금','토'];
@@ -29,11 +29,55 @@ window.onload = function(){
 	
 	var frm = document.frm;
 	
+
+	
 	// 년 구하기
-	for( var j=year-5;  j<= year+5; j++){
+	for( var j=year-5;  j<= year+5; j++){				//현재 연도에서 +-5년
 		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
 	}
-
+	//월 구하기
+	for(var t=1; t<=12; t++){
+		frm.m.add(new Option(t, t));
+	}	
+	//일 구하기
+	for(var f=1; f<=lastDays[month]; f++) {
+		frm.d.add(new Option(f, f));
+	}
+	
+	
+	
+	//오늘 날짜로 선택되도록 하기
+	frm.y.value = year;
+	frm.m.value = month;
+	frm.d.value = date;
+	
+	//요일 나타내기
+	let yoil = today.getDay();
+	frm.w.value = weeks[yoil];
+	
+	frm.y.onchange = calc;  //함수 부르는 거 아니고 연결만 하는 거 
+	frm.m.onchange = calc;
+	
+	function calc (){
+		var y = frm.y.value;
+		var m = frm.m.value;
+		 frm.d.length = 0;
+		
+		for(var k=1; k<=lastDays[m-1]; k++) {
+			frm.d.add(new Option(k, k));
+		}
+		
+		//윤년해보자***************************
+		if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) { 
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
 }
 </script>
 

@@ -13,8 +13,17 @@
 <script type="text/Javascript">
 	window.onload = function(){
     	document.getElementById('btn').onclick = function(){
+		//1 id값으로 찾기 ****안됨****
+    		 let name = document.getElementById('userName');
+    		let result = document.getElementById('result');
+    		result.innerHTML = name.value + '이다.'; 
 
- 
+    		
+    		//2 name으로 찾기
+    		let name = document.frm.username;
+    		let result = document.getElementById('result');
+    		result.innerHTML = name.value + '님, 안녕'; 
+  
     	}
     }
 </script>

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#tbl { border : 1px solid;
+		width : 100px;
+		height:60px;
+		background-color: #FFFFE5;
+}
+
+.first { background-color: blue;}
+

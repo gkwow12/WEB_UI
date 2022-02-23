@@ -10,7 +10,19 @@
 			- preventDefault() : 이벤트 본래의 동작 취소
 	*/
 
-
+	window.onload = function() {
+				let inner = document.getElementById('inner')
+				inner.onclick = function(evt) {
+				alert('클릭됨')
+				evt.stopPropagation();
+				evt.preventDefault();
+			}
+				let outer = document.getElementBuId('outer')
+				outer.onclick = function() {
+					alert('클릭')
+				}
+			}
+	
 </script>
 </head>
 <body>

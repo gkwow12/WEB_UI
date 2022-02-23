@@ -7,13 +7,26 @@
 
 	window.onload = function(){
 		// 1. alert
-		
-		
+		//아래 다 똑같음
+		/* window.alert('이 사이트는 이동하였습니다.')
+		window.location.href = 'http://www.ikosmo.co.kr'
+		location.href = 'http://www.ikosmo.co.kr' */
+		//window.location = 'http://www.ikosmo.co.kr'
+			
 		// 2. confirm
 		
+		//let result = window.location.href = 'http://www.ikosmo.co.kr'
+		//alert(result); //-> 확인 버튼은 true 취소는 false
 		
+		//확인 창의 결과를 변수에 저장해야 돼~~
+		let result = window.confirm('이 사이트는 이동하였습니다.  사이트로 이동하겠습니까?')
+		if(result) {location.href = 'http://www.ikosmo.co.kr' 
+		}else{}  // 다 안 한듯?
+
+				
 		// 3. prompt : 
-		
+	/* 	let result = window.prompt("원하는 사이트를 입력하세요")
+		location.href = result; */
 	}
 
 </script>

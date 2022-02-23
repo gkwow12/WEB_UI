@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//(0) 상수값 처리
+/* const Mon = 0;
+const Tues = 1;
+const Wed = 2;
+
+let week = Mon;
+if(week==Mon) alert('월요일1');
+if(weel == 0) alert('월요일2'); */
+
+//(1) symbol : 고유의 상수값을 표현할 때 사용
+const Monday = Symbol(0);
+const Tuesday= Symbol(1);
+let week1= Monday;
+if(week1==Monday) alert('월요일1');
+if(week1==0) alert('월요일2');
+if(week1==Symbol(0)) alert('월요일3');
+
+//(2) eval() : 동적으로 스크립트 실행하기
+var str = 'alert("안녕하세요")';
+alert(str);
+eval(str)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

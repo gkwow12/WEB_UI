@@ -17,12 +17,15 @@
 		  document.write(i+'');
 	  } */
 	  
+	  // 뽑은 로또 번호가 겹치지 않게 숫자를 넣을 객체를 생성시킨다
 	  let s = new Set();
+	  //6번만 나오게 반복문을 돌린다. (소수점은 버림)
 	  while(s.size<6){
 	  	let num = Math.floor((45*Math.random())+1);
+	  	//나온 숫자를 set 객체에 넣는다.(중복된 값이 없을 경우)
 	  	s.add(num);
 	  }
-
+		//객체에 넣은 숫자를 배열로 만듦 (유사배열로 만드는 함수)
 	  let arr = Array.from(s);
 	  arr.sort();
 

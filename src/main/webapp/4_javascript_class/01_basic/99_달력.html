@@ -10,39 +10,49 @@
     -->
     
 <script type="text/javascript">
-   var today = new Date();
-   var max =today.setMonth(today.getMonth() + 1);
-   
+  
    var date = ['일','월','화','수','목','금','토'];
    
-   max = today.setDate(0);
-   max = today.getDate();
+   //이번달의 마지막 날
+   var today = new Date();
+   today.setMonth(today.getMonth() + 1);
+   today.setDate(0);
+  var max = today.getDate();
    
-   var day = today.setDate(0);
-   day = today.setDate(today.getDate()+1)
+ //이번달의 첫째 날
+   today.setDate(0);
+   today.setDate(today.getDate()+1)
    day = today.getDay();
+  
+   //달력 안에 날짜 넣기 위한 수(for문)
    var cnt = 1;
+   
+   //테이블 만들기 시작
    document.writeln("<table border='1'><tr>")
+   
+   //첫 번째 줄에 요일 나타내기
    for(let i = 0; i<date.length; i++){
       document.writeln("<td>" + date[i] + "</td>");
    }
    document.writeln("</tr>")
    
-   
+   //행 5줄 만들기 위한 반복문 (tr열고 끝나면 닫기) 	 
    for(let i = 0; i<5; i++){
       document.writeln("<tr>")
-      
+      //????왜???
       for(let j = i*7; j<(i*7)+7;j++){
+    	  //이번달 1일보다 작거나 마지막날보다 크다면 (저번 달 / 다음 달)
          if(j<day || j>max+1){
+        	 // 빈칸 만들기
          document.writeln("<td></td>");
          }
-         else{
+         else{ //이번달 날짜는 cnt 사용 (자동으로 증가하게끔)
          document.writeln("<td>"+ cnt + "</td>");   
             cnt++;
          }
-      }
+      }//다음 줄로 넘어갈 수 있게 닫기
       document.writeln("</tr>");
-   }
+   }// 다 끝나면 테이블 끝내기 
    document.writeln("</table>");
 </script>
 </head>

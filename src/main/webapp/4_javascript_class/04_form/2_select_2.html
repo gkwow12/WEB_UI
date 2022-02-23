@@ -5,6 +5,45 @@
 <title> 폼 예제 2</title>
 </head>
 <script type="text/javascript">
+
+window.onload=function() {
+document.getElementById('up').onclick = function() {
+	var idx = document.frm.play.selectedIndex;
+	var optSel = document.frm.play.options;
+	var temp = optSel[idx].value;
+	
+	if(idx>0){
+	optSel[idx].text = optSel[idx-1].text;
+	optSel[idx-1].text = temp;
+	optSel[idx-1].selected = true;
+}else { optSel[0].text = optSel[idx].text;
+		optSel[idx].text = temp;
+		optSel[idx].selected=true;
+		
+}
+}
+
+document.getElementById('down').onclick = function() {
+	var idx= document.frm.play.selectedIndex;
+	var optSel = document.frm.play.options;
+	var temp = optSel[idx].value; // 값을 바꾸기 위해서 임시로 넣을 변수(선택한 값)
+	
+	if(idx<frm.play.length-1) {
+	optSel[idx].text = optSel[idx+1].text;
+	optSel[idx+1].text = temp;
+	optSel[idx+1].selected = true;
+	}else { // 맨 아래랑 맨 위랑 바뀌게하기 (순환)
+		optSel[idx].text = optSel[0].text; //맨 위에 있는 값이 맨 아래에 덮어짐
+		optSel[0].text = temp; // 선택된 값을 맨 위에 넣어줌 
+		optSel[0].selected = true; //선택된 것을 같이 옮겨줌
+		
+	}
+	
+}
+	
+
+}
+
 </script>
 <body>
 

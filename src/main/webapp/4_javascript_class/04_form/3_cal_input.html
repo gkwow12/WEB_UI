@@ -5,6 +5,46 @@
 <title> 폼 예제 3 </title>
 <script type="text/javascript">
 
+window.onload = function() {
+	//오늘의 날짜 구해서 화면에 출력하기
+	let today = new Date();
+	
+	document.frm1.y.value = today.getFullYear();
+	document.frm1.m.value = today.getMonth() +1;
+	document.frm1.d.value = today.getDate();
+
+	document.getElementById('btn').onclick = function(){
+	
+	//1) 사용자 입력한 년 월 일 값 얻어오기
+	let y = document.frm1.y.value
+	let m = document.frm1.m.value
+	let d = document.frm1.d.value
+	
+	//2) 얻어온 년 월 일 값들을 date() 클래스에 지정
+
+/* 	let date =  new Date();
+	date.setFullYear(y);
+	date.setMonth(m-1);  //하나씩 할 때는 월에 -1 필수
+	date.setDate(d); */
+	
+	let date =  new Date(y + "/" + m + "/" + d);  //한꺼번에 처리할 때는 -1 하지 않음
+	
+
+	
+	//3) 요일값을 얻어옴
+	let day = date.getDay();
+	
+	//4) 요일별 배열을 만들어서 해당 값을 화면 출력
+	let weeks = ['일', '월', '화', '수', '목', '금', '토'];
+	
+	
+	document.frm1.w.value= weeks[day];
+}
+	
+}
+
+
+
 </script>
 </head>
 <body>
