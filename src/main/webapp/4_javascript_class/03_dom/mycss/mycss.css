@@ -6,5 +6,7 @@
 		background-color: #FFFFE5;
 }
 
+th, td { border : 1px solid;}
+
 .first { background-color: blue;}
 

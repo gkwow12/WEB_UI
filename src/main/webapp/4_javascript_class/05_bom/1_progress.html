@@ -13,7 +13,13 @@
 <script>
 	var progress = document.getElementById("progress");
 	var current = 0;
-
+	
+	//시간 간격으로 반복처리
+	//프로그래스 값이 점점 올라가게하는 함수 + 100이 되면 멈춰
+	var intervaId = window.setInterval(function() {
+						progress.value = ++current;
+						
+						if(current==100) clearInterval(intervaId)}, 100);
 	
 	
 	

@@ -68,10 +68,13 @@ window.onload = function(){
 		}
 		
 		//윤년해보자***************************
-		if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) { 
-			
-		}
 		
+		
+		if(month == 2) {
+			if((year%4==0 && year%100 != 0) || year % 400 == 0) {
+				let dd = weeks[month+1];
+			}
+		}
 	}
 	
 	

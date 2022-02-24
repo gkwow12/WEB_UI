@@ -6,6 +6,18 @@
 <script type="text/javascript">
 
 //@함수는 인자의 갯수를 체크하지 않는다.
+/*function multiple(first, second) {
+	return first*second;
+}
+document.write('곱은' + multiple(2,3) + "<br/>" )
+document.write('곱은' + multiple(2,3,4) + "<br/>" )
+document.write('곱은' + multiple(2) + "<br/>" )*/
+
+//여러개의 파라메터를 익명의 객체(args)로 받기
+function multiple( args) {
+	return args.first*args.second;
+}
+document.write('곱은' + multiple({first:2,second:3}) + "<br/>" );
 
 </script>
 </head>

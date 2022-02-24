@@ -10,6 +10,27 @@
 		2. location 객체의 href 프로퍼티에 url을 지정
 		*/
 
+		window.onload = function() {
+			let chooseSite = document.getElementById('chooseSite');
+			
+			chooseSite.onchange= function() {
+				//alert('chooseSite.value')
+				//location.href = chooseSite.value;  //다른 브라우저로 가지
+				//location.replace(chooseSite.value);  // 다른 브라우저로 가는데 뒤로 가기 비활성화
+				
+				
+				//타임 아웃 걸기 ( 함수 안에 다 쓰기, 걸리는 시간)
+				setTimeout(function() {
+					location.href = chooseSite.value;
+					location.replace(chooseSite.value);
+				}
+				, 2000);   //데이터를 받아오는데 시간이 걸리니까 일부러 시간을 걸어야 함
+				
+				
+			} 
+			
+		}
+		
 
 </script>
 </head>

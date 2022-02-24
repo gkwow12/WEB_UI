@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫째</title>
+<script type="text/javascript">
+
+	var winObj = window.open("second.html","","width=400, height=300");
+
+window.onload = function(){
+	frm.sel.onchange = function(){
+		//alert(frm.sel.value)
+		winObj.fm.result.value = frm.sel.value;
+	}
+}	
+	
+</script>
+</head>
+<body>
+
+<form name='frm'>
+
+	<select name='sel' id='sel'>
+		<option>서울</option>
+		<option>인천</option>
+		<option>제주</option>
+	</select>
+	<hr/>
+	<input type='text' name='txt' id='txt'/>
+</form>
+
+</body>
+</html>

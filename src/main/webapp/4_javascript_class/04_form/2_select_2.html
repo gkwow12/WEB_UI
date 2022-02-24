@@ -16,9 +16,9 @@ document.getElementById('up').onclick = function() {
 	optSel[idx].text = optSel[idx-1].text;
 	optSel[idx-1].text = temp;
 	optSel[idx-1].selected = true;
-}else { optSel[0].text = optSel[idx].text;
-		optSel[idx].text = temp;
-		optSel[idx].selected=true;
+}else { optSel[0].text = optSel[idx+5].text;
+		optSel[idx+5].text = temp;
+		optSel[idx+5].selected=true;
 		
 }
 }

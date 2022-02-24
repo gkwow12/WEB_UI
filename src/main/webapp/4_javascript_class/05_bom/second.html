@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>둘째</title>
+<script type="text/javascript">
+window.onload = function(){
+	var choose = fm.area;
+	for(var i=0; i<choose.length; i++){
+		choose[i].onclick = function(){
+			//alert(this.value);
+			opener.frm.txt.value = this.value;
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+
+<form name='fm'>
+	<input type='text' name='result'/>
+	<hr/>
+	<input type='radio' name='area' value='판교'>판교 <br/>
+	<input type='radio' name='area' value='가산'>가산 <br/>
+	<input type='radio' name='area' value='부평'>부평 <br/>
+	
+</form>
+
+</body>
+</html>

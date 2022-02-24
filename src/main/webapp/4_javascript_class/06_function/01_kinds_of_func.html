@@ -4,7 +4,38 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
+	//1번
+	function first() {
+		let txt = document.getElementById('first');
+		txt.style.backgroundColor = 'red';
+		txt.style.color='yellow';
+	}
+	
+	//2번
+	
+	let second = function() {
+		let third = document.getElementById('third')
+		third.style.backgroundColor = 'red';
+		third.style.color='yellow';
+	};
+	
+	//3번 (다시 보고 작성하기 끝에)
+	//let third = new Function("let tt = document.getElementById('second'); tt.style.backgroundColor="red"");
 
+	
+	//let triangle = new Function('base', 'height', 'return base * height / 2');
+	
+	//4번//
+	
+	let fourth =() => {
+		let third = document.getElementById('fourth')
+		third.style.backgroundColor = 'red';
+		third.style.color='yellow';
+	};
+	
+
+	
+	
 	</script>
 </head>
 

@@ -5,7 +5,22 @@
 <title> 새로 열려진 창 </title>
 <script type="text/javascript">
 	<!--
-			
+		window.onload = function() {
+		var sel = frm.site;
+		for( let i=0; i<sel.lenght; i++){
+			sel[i].onclick = function() {
+				switch(this.value){
+				case '0' : opner.location.href='http://www.daum.net'
+				break;
+				case '1' : opner.location.href='http://www.naver.com' 
+				break;
+				case '2' : opner.location.href='http://www.nate.com'
+				break;
+				
+				}
+			}
+		}
+	}	
 	//-->
 </script>
 </head>
