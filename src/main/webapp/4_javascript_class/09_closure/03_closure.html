@@ -12,7 +12,34 @@
 //			호출되는 함수가 참조하는 함수의 메모리 공간을 참조한다. (?)
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
 
+ var global; 	// 전역변수
 
+function add() {
+	let total = 0;	// 지역변수
+	return function(num) {
+		total += num;
+		return total;
+	};
+}
+let addClosure = add();
+document.write(addClosure(1) + "<br/>")
+document.write(addClosure(2) + "<br/>")
+document.write(addClosure(3) + "<br/>")
+document.write(addClosure(4) + "<br/>") 
+
+//----------똑같은 건데 그냥 줄여본 거 
+
+let addClosure1 = function() {
+	let total = 0;	// 지역변수
+	return function(num) {
+		total += num;
+		return total;
+	};
+}();
+document.write(addClosure1(1) + "<br/>")
+document.write(addClosure1(2) + "<br/>")
+document.write(addClosure1(3) + "<br/>")
+document.write(addClosure1(4) + "<br/>")
 </script>
 </head>
 <body>

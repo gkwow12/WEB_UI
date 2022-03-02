@@ -5,6 +5,24 @@
 	<title> 파라메터 인자</title>
 	<script>
 
+	//1> 기본형이 인자인 경우 - call by value
+	let pri = 100;
+	function priParam(pri) {
+		pri--;
+		return pri;
+	}
+	document.write('1. 기본형 : ' + priParam(pri) + '<br/>'); //값만 복사됨 원본에 영향을 주지 않음
+	document.write('1. 기본형 : ' + pri + '<br/>'); //번수에 저장한 값이 수정되지는 않음 함수 안에서만 변함
+	
+	//2> 참조형이 인자인 경우 - call by reference
+	
+	let ref = [1,2,3,4,5]
+	function refParam(ref) {
+		ref.pop();
+		return ref;
+	}
+	document.write('2. 참조형 : ' + refParam(ref) + '<br/>'); // 주소를 복사하기 떄문에 원본에 영향을 줌
+	document.write('2. 참조형 : ' + ref + '<br/>'); // 원본 수정됨
 	</script>
 </head>
 

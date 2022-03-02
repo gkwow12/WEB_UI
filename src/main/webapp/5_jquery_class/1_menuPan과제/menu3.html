@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CAFE</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+img {
+	max-width: 128px;
+	max-height: 150px;
+	}
+	#titleText {
+	width:auto;
+	height:auto;
+	}
+	
+
+</style>
+
+
+<script src='../lib/jquery-3.6.0.js'></script>
+<script type="text/javascript">
+
+
+$(function() {
+	 let tbl = $('#listTable');
+	 
+	/*  let ap =  "<option value='0'>" +'선택' +"</option><option value='1'>" + '1' +
+		"</option><option value='2'>" + '2' + 
+		"</option><option value='3'>" + '3' + 
+		"</option><option value='4'>" + '4' + 
+		"</option><option value='5'>" + '5' + 
+		"</option><option value='6'>" + '6' + 
+		"</option><option value='7'>" + '7' + 
+		"</option><option value='8'>" + '8' + 
+		"</option><option value='9'>" + '9' + 
+		"</option><option value='10'>" + '10' + 
+		"</option></select></td>"
+		
+		
+		
+		"<td><select><option>" + '핫' + 
+		"</option><option>" + '아이스' + 
+		"</option></select></td><td><select><option>" + '토핑' +
+		"</option><option>" + '밀크폼' +
+		"</option><option>" + '폼' + 
+		"</option><option>" + '코코넛' +
+		"</option><option>" + '알로에'+ 
+		"</option><option>" + '화이트펄' + 
+		"</option></select></td>"
+		
+		
+		"<td><select><option>" + '선택' + 
+		"</option><option>" + '0%'  + 
+		"</option><option>" + '30%' + 
+		"</option><option>" + '50%'+
+		"</option><option>" + '70%'+
+		"</option><option>" + '100%' + 
+		"</option></select>
+		
+		"</td><td><select><option>" +'선택' + 
+		"</option><option>" + '거의없음' + 
+		"</option><option>" + '보통' + 
+		"</option><option>" + '가득' + 
+		"</option></select></td><td>" + 
+		
+		"<input type=button id=del class='del' value='삭제'/></td></tr>"; */
+	
+//선택하면 주문 내역에 뜰 정보 배열
+let order = [{name: '타로밀크티', price : 4200},
+{name: '블랙밀크티', price : 4200},
+{name: '제주그린밀크티', price : 4700},
+{name: '우롱티', price : 4200},
+{name: '패션후르츠', price : 4500},
+{name: '망고요구르트', price : 5000},
+{name: '망고스무디', price : 5500},
+{name: '얼그레이', price : 4200},
+{name: '자몽주스', price :4200}]
+		
+		
+// 가격
+
+//옵션
+
+//삭제
+		
+	 	
+		$('.btnn').click(function() {
+		
+			//order.forEach(function(item, index) {
+			/* $.each(order, function(index, obj){
+				 for(i=0; i<=order.length; i++) { */
+					//let or =  order[index].name+ "/" +order[index].price
+					
+					// order[i].name+ "/" +order[i].price
+					//alert(or)
+					
+				 //}
+					//$(tbl).append("<tr><td>" + obj.name + "</td><td>" + obj.price + "</td></tr>");
+				//}
+				
+				//})
+				
+		})
+		
+	$(document).on("click",'#del', function() {
+	//$('#del').click(function() {
+		
+		$(this).parents('tr').remove();
+	})
+		
+		
+	
+	//  });
+	
+	
+	$(document).on("change",".sel",function(){
+		
+		let me1 = $('#pricee1 option:selected').val();
+	let me2 = $('#pricee2 option:selected').val(); 
+	let me3 = $('#pricee3 option:selected').val(); 
+	let me4 = $('#pricee4 option:selected').val(); 
+	let me5 = $('#pricee5 option:selected').val(); 
+	let me6 = $('#pricee6 option:selected').val(); 
+	let me7 = $('#pricee7 option:selected').val(); 
+	let me8 = $('#pricee8 option:selected').val(); 
+	let me9 = $('#pricee9 option:selected').val();
+		
+		
+		$("#btn").on("click", function() {
+			 var m1=0;
+			 var m2=0;
+			 var m3=0;
+			 var m4=0;
+			 var m5=0;
+			 var m6=0;
+			 var m7=0;
+			 var m8=0;
+			 var m9=0;
+			
+			 if(isNaN(me1) ) {  me1 =0 ; m1=me1;
+			 }else{ m1 = me1*4200;}
+			 
+			 if(isNaN(me2) ) {   me2 =0 ; m2=me2;
+			 }else{ m2 = me2*4200;}
+			 
+			 if(isNaN(me3) ) {   me3 =0 ; m3=me3;
+			 }else{ m3 = me3*4700;}
+			 
+			 if(isNaN(me4) ) {   me4 =0 ; m4=me4;
+			 }else{ m4 = me4*4200;}
+			 
+			 if(isNaN(me5) ) {   me5 =0 ; m5=me5;
+			 }else{ m5 = me5*4500;}
+			 
+			 if(isNaN(me6) ) {   me6 =0 ; m6=me6;
+			 }else{ m6 = me6*5000;}
+			 
+			 if(isNaN(me7) ) {   me7 =0 ; m7=me7;
+			 }else{ m7 = me7*5500;}
+			 
+			 if(isNaN(me8) ) {   me8=0 ; m8=me8;
+			 }else{ m8 = me8*4200;}
+			 
+			 if(isNaN(me9) ) {   me9 =0 ; m9=me9;
+			 }else{ m9 = me9*4200;}
+			 
+			
+			 let calc = m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8 + m9;
+			$('#total').val(calc);
+			 
+			
+		
+
+			
+	});
+	 });
+ 
+});
+	
+ 
+ 
+
+
+ 
+ 
+ </script>
+
+
+
+</head>
+<body>
+
+
+	<div id="leftdiv">
+		<table class="menutbl">
+			<tr id="menutitle">
+				<th colspan=3 id="titleText"><img src="./images/pngegg.png" /></th>
+			</tr>
+			<tr class="menus">
+				<td id='menu1' class='menu'><img src="./images/taro.png" /> <br />
+					<span id="label1" value='타로밀크티'>타로밀크티</span> <span id="price1"
+					value='4200'>4200</span>원 <br />
+					
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+				<td id='menu2' class='menu'><img src="./images/black.png" /> <br />
+					<span id="label2" value='블랙밀크티'>블랙밀크티</span> <span id="price2"
+					value='4200'>4200</span>원<br />
+					
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+				<td id='menu3' class='menu'><img src="./images/green.png" /> <br />
+					<span id="label3" value='제주그린밀크티'>제주그린밀크티</span> <span id="price3"
+					value='4700'>4700</span>원<br />
+					
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+
+			</tr>
+			<tr class="menus">
+				<td id='menu4' class='menu'><img src="./images/wrong.jpg" /> <br />
+					<span id="label4" value='우롱티 '>우롱티 </span> <span id="price4"
+					value='4200'>4200</span>원 <br />
+					<button type='button' id='btnn' class='btbtnnn'>담기</button></td>
+				<td id='menu5' class='menu'><img src="./images/fasion.png" />
+					<br /> <span id="label5" value='패션후르츠 '>패션후르츠 </span> <span
+					id="price5" value='4500'>4500</span>원<br />
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+				<td id='menu6' class='menu'><img src="./images/mangoyogu.png" />
+					<br /> <span id="labeln" value='망고요구르트'>망고요구르트</span> <span
+					id="price6" value='5000'>5000</span>원 <br />
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+			</tr>
+			<tr class="menus">
+				<td id='menu7' class='menu'><img src="./images/mangosmooth.png" />
+					<br /> <span id="label7" value=' 망고스무디'> 망고스무디</span> <span
+					id="price7" value='5500'>5500</span>원 <br />
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+				<td id='menu8' class='menu'><img src="./images/earlgrey.jpg" />
+					<br /> <span id="label8" value='얼그레이 밀크티'>얼그레이 밀크티</span> <span
+					id="price8" value='4200'>4200</span>원 <br />
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+				<td id='menu9' class='menu'><img src="./images/jamong.png" />
+					<br /> <span id="label9" value='자몽주스'>자몽주스</span> <span
+					id="price9" value='4600'>4600</span>원 <br />
+					<button type='button' id='btnn' class='btnn'>담기</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="rightdiv">
+		<table id="listTable">
+			<tr id="listtitle">
+				<th colspan=3 id="titleText">주문내역</th>
+			</tr>
+			<tr id="totallist">
+				<td colspan='3'>총합 : <input type='text' id='total' /> 원 <input
+					type='button' value='주문하기' id='btn' />
+				</td>
+			</tr>
+			<tr id="listtr">
+				<td width="150">목록</td>
+				<td width="100">개수</td>
+
+				<td width="100">핫/아이스</td>
+
+				<td width="100">토핑</td>
+
+				<td width="100">당도</td>
+
+				<td width="100">얼음</td>
+
+
+
+				<td width="50">삭제</td>
+			</tr>
+
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 // 함수의 인자로 들어오는 함수처리
-function arrayProcess( data, f ) {
+function arrayProcess( data, f ) { //f -> 함수가 들어감 
 	for( key=0; key < data.length; key++ ){
 	//for(var key in data ){
-		f(  data[key].value );
+		f(  data[key].value );  //f -> 함수 호출됨
 	}
 }
 

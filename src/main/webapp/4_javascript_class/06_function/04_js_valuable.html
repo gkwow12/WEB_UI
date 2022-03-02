@@ -4,7 +4,47 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 변수와 범위</title>
 	<script>
-
+	//1. 글로벌 변수와 지역변수
+/* 	var scope = '글로벌변수';
+	function getValue() {
+		var scope = '지역변수';
+		return scope;
+	}
+	document.write("1>" + getValue()) // 함수안에 있는 scope 불렀기 때문에 지역변수
+	document.write("2>" + scope)// 함수 전에 선언된 scope를 불렀기 떄문에 글로벌 변수 */
+	
+	//2. 변수 선언 시 var 생략 가능 (비추천) -> 글로벌변수
+	// ******  변수 선언 시 반드시 var/ let/ const  *****
+	/*  scope = '글로벌변수';
+	function getValue() {
+		 scope = '지역변수';
+		return scope;
+	}
+	document.write("1>" + getValue()) 
+	document.write("2>" + scope) */
+	
+	
+	//3. 지역변수는 함수 전체에 유효하다. -> 지역변수 선언은 앞 쪽에서 하기!!! < var는 함수 블럭에서 유효하지만 let은 블럭 안에서 유효함>
+ var scope = '글로벌변수';
+	function getValue() {
+	
+		var scope = '지역변수';
+			document.write("0>" + scope + "<hr/>");
+		return scope;
+	}
+	document.write("1>" + getValue() + "<br/>") // 함수안에 있는 scope 불렀기 때문에 지역변수
+	document.write("2>" + scope + "<br/>")// 함수 전에 선언된 scope를 불렀기 떄문에 글로벌 변수 
+	
+	//4. 지역변수는 함수 블럭에서 유효함 -> if문은 함수가 아니기 때문에 지역변수가 아님 (반드시 함수 안에서 사용하기)
+	/* if(true) {
+		let i=100;
+		document.write("i=" + i)	
+	}
+	
+	function test() {
+		var f=10;
+	}
+	document.write("f:" +f)  // 함수 안에서 지역변수가 있었기 때문에 에러가 남 */
 	</script>
 </head>
 

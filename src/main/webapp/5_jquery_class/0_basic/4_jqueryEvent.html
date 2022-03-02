@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery event</title>
+
+<style type="text/css">
+	.bg { background : yellow; }
+	.border { border : 3px dotted red; }
+</style>
+
+<script src='../lib/jquery-3.6.0.js'></script>
+<script type="text/javascript">
+$(function() {
+	
+	/* 
+	$('li').click(function(){
+		$('#result').text($(this).text()); 
+})*/
+	
+	$('li').one('click', function(){
+		$('#result').text($(this).text());
+	}); //-> 그냥 이벤트 연결
+	
+	 $('h1').css({"cursor":"pointer"}).click(function(){
+		let li =$('<li>').text(new Date()); 
+		
+	$('ul').append(li);
+	})
+
+	//***********************************88
+	//동적으로 만들어진 요소에는 이벤트가 발생하지 않음
+	// on() 함수 이용
+	$('ul').on('click','li',function() {
+		$('#result').text($(this).text());
+	});
+});
+
+
+</script>
+<!-- 
+- text/html() : 태그와 태그 사이의 값
+- val()	 : value 값 
+ -->
+</head>
+<body>
+	<h1>제이쿼리 이벤트</h1>
+	 <ul>
+		<li>부에노스 아이레스</li>
+		<li>바르셀로나</li>
+		<li>리마</li>
+		<li>라파스</li>
+	 </ul>	
+	<div id="result"></div>
+</body>
+</html>

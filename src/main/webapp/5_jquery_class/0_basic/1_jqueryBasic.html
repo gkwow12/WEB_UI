@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>첫 연습</title>
+<script src='../lib/jquery-3.6.0.js'></script>
+<script type="text/javascript">
+$(function() {
+	/*$('#here').click(function(){
+		$(this).text('클릭하면 내용바뀜')
+	});
+
+//mouseenter<->mouseleave
+//mouseover<->mouseout
+ 	$('#here').mouseenter(function(){
+		$(this).text('마우스 들어감')
+	});
+	$('#here').mouseleave(function(){
+	$(this).text('마우스 나감')
+});
+	
+	$('#here').hover(function() {
+		$(this).css('border','3px solid green');
+	}, function(){
+		$(this).css('border','3px dotted yellow');
+	});*/
+
+//$('#here').fadeOut('slow').fadeIn('slow');
+//$('#here').slideDown('slow'),slideUp('slow');
+
+var s = $('#student');
+var a = s.find('#age');
+a.css({'border':'3px solid green' , 
+		'color' : 'orange' ,
+		'background-color' : 'blue'
+	
+	});
+});
+
+
+</script>
+</head>
+<body>
+
+
+	<div id="here">아자아자 제이쿼리~~!!!</div>
+
+
+	<div id="student">
+		<div id="name">홍길동</div>
+		<div id="age">34</div>
+	</div>
+
+
+
+</body>
+</html>

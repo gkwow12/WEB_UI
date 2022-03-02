@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <title></title>
 <script type="text/javascript">
-/*  콜백함수란? 함수가 다른 함수의 파라메터로 전달되는 함수
-		 			콜백함수는 함수가 실행되는 중간에 호출되어 상태 정보를 저장하거나 결과 값을 처리할 때 사용
- */
+
  
 /* 		//------ 함수 선언
 		  function add(a,b){
@@ -16,9 +14,53 @@
 		//------ 함수 호출
 		add(10,20); 
 */
-		
 
+
+/*
+ *  callBackFunc = function(result){
+	document.write('[결과] : ' + result + "<br/>");
+}
+ 
+ */
+function add(a,b,callBackFunc) {// 인자에 값 넣기 
+	var result = a+b; 	
+	callBackFunc(result);
+	
+//---------------------------------------
+
+	var returnFunc =  function() {
+		return a + "+" + b+ "=" +result;
+	};
+	return returnFunc;    // a+b =result  => 결국 이 값이 최종적으로 호출된다~~~~
+}
+ //----------------------------------------------
+ 
+var returnVar = add(10,20, function(result){    //add 함수에 인자가 들어왔으니까 처음으로 돌아가서 add 함수 인자에 값을 넣음
+	
+ document.write('[결과] : ' + result + "<br/>");
+	});	
+ document.write('리턴값은 결과값 : ' + returnVar());  // 최종적으로 returnFunc 값이 호출됨
+ 
+ 
+ 
+ 
+ // ******** return 과정? 줄이기 위에랑 똑같은 거임  ***************
+ 
+ 
+ function add(a,b,callBackFunc) {// 인자에 값 넣기 
+		var result = a+b; 	
+		callBackFunc(result);
+	//---------------------------------------
+		return function() {
+			return a + "+" + b+ "=" +result;
+		};;    // a+b =result  => 결국 이 값이 최종적으로 호출된다~~~~
+	}
+	 //----------------------------------------------
+	var returnVar = add(10,20, function(result){    //add 함수에 인자가 들어왔으니까 처음으로 돌아가서 add 함수 인자에 값을 넣음
 		
+	document.write('[결과] : ' + result + "<br/>");
+	});	
+	document.write('리턴값은 결과값 : ' + returnVar());  // 최종적으로 returnFunc 값이 호출됨
 		
 </script>
 </head>

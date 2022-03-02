@@ -18,7 +18,23 @@
 		};
 
 		// 자식클래스
-
+		let Dog = function(){} //클래스 생성
+			Dog.prototype = new Animal() //Animal 객체 상속
+			
+			//sound 오버라이딩
+			Dog.prototype.sound = function(){
+				document.writeln('멍멍 <br/>');
+			}
+			
+			let ge = new Dog(); //ge 객체 생성
+			ge.sound(); //상속된 메소드 호출
+			ge.move();
+			
+			Dog.prototype.cute = function(){
+				document.write('강아지는 귀엽다 <br/>'); //상속된 거 말고 자식 객체에서 클래스 생성
+			}
+			ge.cute();//자식 클래스 메소드 호출
+		
 
 
 	</script>

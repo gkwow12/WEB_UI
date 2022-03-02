@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쇼핑몰</title>
+
+<style type="text/css">
+* {
+	margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+	.section {
+		grid-template-columns: 48% 48%;
+		grid-column-gap: 4%;
+		grid-row-gap: 26px;
+	}
+	nav>ul {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	nav>ul>li {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+table>td, tr {
+	width: 40em;
+}
+
+header, body {
+	text-align: center;
+}
+
+header {
+	background-color: #398AB9;
+	font-size: 30px;
+	color: white;
+	padding: 20px;
+}
+
+.nav-container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+nav ul li {
+	display: inline;
+}
+
+section>form>main {
+	padding-top: 30px;
+	padding-bottom: 50px;
+	font-size: 40px;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	padding-bottom: 0;
+	border-radius: 10px;
+	background-color: #FBF8F1
+}
+
+#frm {
+	visibility: hidden;
+	font-size: 20px;
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 15px 0;
+	text-align: center;
+	color: white;
+	background: linear-gradient(to right, #9ADCFF, white);;
+}
+
+nav {
+	background-color: #FBF8F1;
+	margin: 0px;
+}
+
+nav>ul>li>a {
+	color: #1E272D;
+	text-decoration: none;
+	padding: 0px 20px 0px 20px;
+	margin: 15px 0px 15px 0px;
+}
+
+nav>ul>li>a:hover {
+	background-color: white;
+	color: black;
+}
+</style>
+
+<script type="text/javascript">
+
+function resetAll() {
+	document.getElementById("frm").style.visibility="visible";
+	
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+	<header> 쇼핑몰 회원 관리 VER 1.0 </header>
+	<nav>
+		<ul class="nav-container">
+			<li><a href="#" onclick="resetAll()">회원등록</a></li>
+			<li><a href="#">회원목록조회/수정</a></li>
+			<li><a href="#">회원매출조회</a></li>
+			<li><a href="#">홈으로</a></li>
+		</ul>
+	</nav>
+
+
+
+
+	<section>
+
+		<form id='frm' class='frm'>
+
+			<main class="title">회원등록</main>
+
+			<table border='1' class='tbl'>
+
+				<tr>
+					<td>회원번호(자동발생)</td>
+
+					<td><input type='text' id='num'></td>
+				</tr>
+
+
+				<tr>
+					<td>회원성명</td>
+
+					<td><input type='text' id='name'></td>
+				</tr>
+
+
+				<tr>
+					<td>회원주소</td>
+
+					<td><input type='text' id='addr'></td>
+				</tr>
+
+
+				<tr>
+					<td>가입일자</td>
+
+					<td><input type='text' id='day'></td>
+				</tr>
+
+
+				<tr>
+					<td>고객등급[A:VIP,B:일반,C:직원]</td>
+
+					<td><input type='text' id='level'></td>
+				</tr>
+
+
+				<tr>
+					<td>도시코드</td>
+
+					<td><input type='text' id='city'></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<button type="button" id=btn>등록</button>
+						<button type="button" id=btn>조회</button>
+					</td>
+				</tr>
+
+
+
+			</table>
+		</form>
+	</section>
+
+	<div class="footer">HRDKOREA Copyright@2016 All rights reserve.
+		Human Resources Development Service of Korea</div>
+</body>
+</html>
