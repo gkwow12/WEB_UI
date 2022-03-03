@@ -3,6 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title> 제이쿼리 이벤트 연습 </title>
+<script src='../lib/jquery-3.6.0.js'></script>
+<script type="text/javascript">
+
+$(function(){
+	//글씨체 바꾸기
+	//텍스트 필드랑 셀렉트 아이디 찾기
+	let size = 16;
+	let txt = $('#txt');
+	//셀렉트 체인지 이벤트할 때 값에 맞게 글씨 크기 변경
+	
+	$('.fontSize button').on('click', function(){
+		
+		 let btnIdx = $('.fontSize button').index(this);
+		
+		if(btnIdx == 0){
+			size++;
+			txt.css("font-size", size+"px");
+		
+		}else if(btnIdx == 1){
+			size--;
+			txt.css("font-size", size+"px");
+		} 
+	})
+	$('#fontstyle').on('change',function(){
+	      txt.css({'font-family' : $(this).val()});
+	   });
+});
+
+</script>
+
+
 </head>
 <body>
 

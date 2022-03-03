@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>CAFE</title>
+
+
+  
 <link rel="stylesheet" type="text/css" href="style.css">
 <style type="text/css">
 img {
@@ -10,19 +13,41 @@ img {
 	max-height: 150px;
 	}
 	#titleText {
-	width:auto;
+	width:300px;
 	height:auto;
 	}
+
 	
 
 </style>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-<script src='../lib/jquery-3.6.0.js'></script>
+
+  
 <script type="text/javascript">
 
 
 $(function() {
+	
+	
+    $('#slider').bxSlider({	
+    
+  	  slideMargin : 10,
+  	  slideWidth :500,
+  	  auto : true,
+  	  pause : 3000,
+  	  moveSlides :1,
+  	 minSlides : 4,
+	  maxSlides : 4,
+	  pager : false,
+	  controls   : false
+  	
+ });
+
+    
 	 let tbl = $('#listTable');
 	 
 	 let ap =  "<option value='0'>" +'선택' +"</option><option value='1'>" + '1' +
@@ -55,6 +80,16 @@ $(function() {
 		"</option><option>" + '보통' + 
 		"</option><option>" + '가득' + 
 		"</option></select></td><td>" +  "<input type=button id=del class='del' value='삭제'/></td></tr>";
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
 	 
 	 
 	 
@@ -217,7 +252,6 @@ $(function() {
 </head>
 <body>
 
-
 	<div id="leftdiv">
 		<table class="menutbl">
 			<tr id="menutitle">
@@ -273,6 +307,7 @@ $(function() {
 		<table id="listTable">
 			<tr id="listtitle">
 				<th colspan=3 id="titleText">주문내역</th>
+				
 			</tr>
 			<tr id="totallist">
 				<td colspan='3'>총합 : <input type='text' id='total' /> 원 <input
@@ -296,8 +331,24 @@ $(function() {
 				<td width="50">삭제</td>
 			</tr>
 
+
+
+
 		</table>
 	</div>
+	
+	<div id="slider">
+      <div><img src="./images/taro.png" /></div>
+      <div><img src="./images/black.png" /></div>
+      <div><img src="./images/green.png" /></div>
+      <div><img src="./images/wrong.jpg" /></div>
+      <div><img src="./images/fasion.png" /></div>
+      <div><img src="./images/mangoyogu.png" /></div>
+      <div><img src="./images/mangosmooth.png" /></div>
+      <div><img src="./images/earlgrey.jpg" /></div>
+   </div>
+	
+	
 
 </body>
 </html>

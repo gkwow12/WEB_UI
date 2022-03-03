@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>00_object.html</title>
+<script type="text/javascript">
+//{} ->객체 / [] -> 배열
+
+//0. 객체 선언
+//(1)
+let obj1 = { name : '홍길동', age : 55}
+console.log(obj1);
+
+// 기존 객체에 함수 추가 (가능한)
+obj1.display = function() {
+	return this.name + "님" +  this.age + "세 입니다.";
+}
+console.log(obj1.display());
+
+//(2)
+var obj2 ={}
+obj2.name='홍길자';
+obj2.age = '22';
+obj2['display'] = function() {
+	return this.name + "님" +  this.age + "세 입니다.";
+}
+console.log(obj2.display());
+
+//(3)
+
+var obj2 = new Object();
+obj2.name='홍길자';
+obj2.age = '22';
+obj2['display'] = function() {
+	return this.name + "님" +  this.age + "세 입니다.";
+}
+console.log(obj2.display());
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

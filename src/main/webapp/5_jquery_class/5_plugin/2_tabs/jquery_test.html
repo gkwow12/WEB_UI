@@ -6,7 +6,25 @@
 	
 	<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" charset="utf-8"/>
 	<link rel="stylesheet" href="css/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" charset="utf-8"/>
-
+<!-- jquey -->
+ <script type="text/javascript" src='../../lib/jquery-3.6.0.js'></script>
+ <!-- plugin -->
+ <script type="text/javascript" src='./js/jquery-ui-1.10.0.custom.min.js'></script>
+<script type="text/javascript">
+$(function(){
+	 //구조가 맞아야 활용할 수 있음 아래가 맞는 구조임
+	$('#info').tabs({
+		active : 2,  // 경고탭이 먼저 나오게 하기
+		hide : true,  //애니메이션 효과 주기
+		show : true,
+		event : 'mouseover',
+		heightStyle : 'auto'   //높이 고정
+		
+	})
+	
+	
+});
+</script>
 
 
 </head>

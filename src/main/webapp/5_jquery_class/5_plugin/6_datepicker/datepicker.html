@@ -6,13 +6,30 @@
 <link rel="stylesheet" type="text/css"
   href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
 <script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.0.js"></script>
-<script type="text/javascript"   src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+	<script type="text/javascript"   src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
-
+<script type="text/javascript">
+$(function() {
+	$.datepicker.setDefaults($.datepicker.regional['ko'])
+	$('#datepicker').datepicker({
+		showOn : 'button', // 사용자가 선택하게 유도하기
+		//buttonImage : './images/calendar.gif',
+		//buttonImageOnly : true,
+		//showAnim : 'sliedDown',
+		showButtonPanel : true
+	})
+	let day1 = new Date('2020-12-31')
+	$('#datepicker').datepicker('setDate', new Date('2020-12-31'));
+})
+</script>
 
 </head>
 <body>
 <label for="date">날짜:</label>
 <input id="datepicker" type="text">
+
+<hr/><hr/>
+<input type='date'>
+
 </body>
 </html>
